@@ -1,0 +1,42 @@
+{% extends 'home/base.html' %}
+{% block title %}
+ | Encrypt
+{% endblock %}
+{% block extra_head %}
+    <style>
+      
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <form class="col s12" action="/encrypt/" method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="input-field col s12">
+            <!-- <textarea id="textarea2" class="materialize-textarea" rows=5 data-length="500"></textarea> -->
+            {{ form.decText }}
+            <label for="textarea2">Enter Text</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <!-- <input id="password" type="password" class="validate"> -->
+            {{ form.finder }}
+            <label for="password">Protect with a Password</label>
+          </div>
+        </div>
+        <input type="hidden" name="device_width"  id="device_width">
+        <button type="submit" class="btn green btn-small"><i class="material-icons white-text left">lock</i>Encrypt</button>
+        <button class="btn red btn-small right"><i class="material-icons white-text left ">cancel</i>Cancel</button>
+      </form>
+    </div>
+</div>
+<script>
+    var test = window.screen.width;
+    document.getElementById("device_width").value = test;
+    $(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+</script>
+{% endblock %}

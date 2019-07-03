@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+{% block title %}
+ | Password
+{% endblock %}
+{% block extra_head %}
+    <style>
+      
+    </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <form class="col s12" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12">
+            <!-- <input id="password" type="password" class="validate"> -->
+            {{ form.finder }}
+            <label for="password">Create a Password</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-small green">Create Password</button>
+    </form>
+</div>
+{% endblock %}
