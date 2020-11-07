@@ -1,5 +1,3 @@
-# EncryptionFog
+# Encryptzen 
 
-Visit site at: https://encryptionfog.herokuapp.com/
-
-Thank you
+An Online Tool to encrypt and decrypt password protected texts.
